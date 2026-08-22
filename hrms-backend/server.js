@@ -12,4 +12,5 @@ app.use("/attendance", require("./routes/attendance"));
 app.use("/leave", require("./routes/leave"));
 app.use("/dashboard", dashboardRoutes);
 app.use("/workspace", require("./routes/workspace"));
+app.use("/payroll", require("./routes/payroll"));
 app.listen(5000, () => console.log("Server running on port 5000"));
