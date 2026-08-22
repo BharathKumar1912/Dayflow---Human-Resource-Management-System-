@@ -1,16 +1,19 @@
 const express = require("express");
 const cors = require("cors");
-const dashboardRoutes = require("./routes/dashboard");
 
 const app = express();
+
 app.use(express.json());
 app.use(cors());
 
+// Express routes
 app.use("/auth", require("./routes/auth"));
 app.use("/profile", require("./routes/profile"));
 app.use("/attendance", require("./routes/attendance"));
 app.use("/leave", require("./routes/leave"));
-app.use("/dashboard", dashboardRoutes);
+app.use("/dashboard", require("./routes/dashboard"));
 app.use("/workspace", require("./routes/workspace"));
 app.use("/payroll", require("./routes/payroll"));
-app.listen(5000, () => console.log("Server running on port 5000"));
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
