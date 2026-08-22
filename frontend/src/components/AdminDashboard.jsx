@@ -21,15 +21,20 @@ export default function AdminDashboard() {
   return (
     <div className="container mt-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2>Admin / HR Dashboard</h2>
+        <h2 className="fw-bold text-dark dark:text-white">Admin / HR Dashboard</h2>
         <button className="btn btn-danger" onClick={() => navigate('/')}>Logout</button>
       </div>
 
-      <div className="card p-3 mb-4 shadow-sm">
-        <h4>Attendance Records</h4>
-        <table className="table mt-2">
+      <div className="card p-3 mb-4 shadow-sm bg-white text-dark">
+        <h4 className="fw-bold text-dark mb-3">Attendance Records</h4>
+        <table className="table table-hover mt-2">
           <thead>
-            <tr><th>Employee ID</th><th>Name</th><th>Date</th><th>Status</th></tr>
+            <tr>
+              <th className="text-dark">Employee ID</th>
+              <th className="text-dark">Name</th>
+              <th className="text-dark">Date</th>
+              <th className="text-dark">Status</th>
+            </tr>
           </thead>
           <tbody>
             {attendanceRecords.length > 0 ? (
@@ -48,11 +53,15 @@ export default function AdminDashboard() {
         </table>
       </div>
 
-      <div className="card p-3 shadow-sm">
-        <h4>Leave Approvals</h4>
-        <table className="table mt-2">
+      <div className="card p-3 shadow-sm bg-white text-dark">
+        <h4 className="fw-bold text-dark mb-3">Leave Approvals</h4>
+        <table className="table table-hover mt-2">
           <thead>
-            <tr><th>Employee ID</th><th>Type</th><th>Action</th></tr>
+            <tr>
+              <th className="text-dark">Employee ID</th>
+              <th className="text-dark">Type</th>
+              <th className="text-dark">Action</th>
+            </tr>
           </thead>
           <tbody>
             {pendingLeaves.length > 0 ? (
